@@ -12,7 +12,13 @@
         <StackPanel VerticalAlignment="Bottom" Margin="10">
             <TextBlock Text="Suspicion Levels" Foreground="Green" FontFamily="Courier New"/>
             <ListBox x:Name="SuspicionList" Background="Transparent" Foreground="Green" BorderThickness="0"/>
+            <Button Content="Open Dialog" Click="OpenDialog_Click"/>
+            <Button Content="Evidence Board" Click="OpenBoard_Click"/>
         </StackPanel>
+        <!-- Deduction Canvas -->
+        <Canvas x:Name="DeductionCanvas" Background="Transparent" AllowDrop="True" Drop="DeductionCanvas_Drop">
+            <!-- Перетаскиваемые улики -->
+        </Canvas>
         <!-- Matrix Rain Effect -->
         <Canvas x:Name="MatrixCanvas" Background="Transparent"/>
     </Grid>

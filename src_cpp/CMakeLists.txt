@@ -10,7 +10,7 @@ find_package(raylib REQUIRED)
 include_directories(include)
 
 # Source files
-file(GLOB SOURCES "src/*.cpp")
+set(SOURCES src/Engine.cpp src/bridge.cpp src/scene_manager.cpp src/StoryParser.cpp src/Renderer3D.cpp src/InputHandler.cpp src/highlight.cpp)
 file(GLOB HEADERS "include/*.h")
 
 # Add JSON library
