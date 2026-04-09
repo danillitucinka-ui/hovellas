@@ -1,21 +1,15 @@
-using System.Runtime.InteropServices;
+using System;
 
-class Program
+namespace HovellasUI
 {
-    [DllImport("hovellas_engine.dll")]
-    private static extern void InitializeEngine();
-
-    [DllImport("hovellas_engine.dll")]
-    private static extern void RenderScene(string sceneName);
-
-    [DllImport("hovellas_engine.dll")]
-    private static extern void ShutdownEngine();
-
-    static void Main(string[] args)
+    public class Program
     {
-        InitializeEngine();
-        RenderScene("MainMenu");
-        // Game loop here
-        ShutdownEngine();
+        [STAThread]
+        public static void Main()
+        {
+            var app = new System.Windows.Application();
+            var window = new MainWindow();
+            app.Run(window);
+        }
     }
 }

@@ -1,6 +1,8 @@
 #ifndef GAMESTATEMANAGER_H
 #define GAMESTATEMANAGER_H
 
+#include <iostream>
+
 // Определение состояний игры
 enum GameState {
     EXPLORATION,  // Бродим по 3D
@@ -12,6 +14,9 @@ enum GameState {
 class GameStateManager {
 private:
     GameState currentState = EXPLORATION;
+    float gameTime = 0.0f; // in seconds
+    const float maxTime = 7200.0f; // 120 minutes
+    bool gameOver = false;
 
 public:
     // Получить текущее состояние
@@ -25,7 +30,11 @@ public:
     }
 
     // Обновить логику в зависимости от состояния
-    void Update() {
+    void Update(float deltaTime) {
+        gameTime += deltaTime;
+        if (gameTime >= maxTime && !gameOver) {
+            GameOver_CityLockdown();
+        }
         switch (currentState) {
             case EXPLORATION:
                 // Логика исследования: перемещение, взаимодействие с объектами
@@ -37,6 +46,12 @@ public:
                 // Логика дедукции: соединение улик
                 break;
         }
+    }
+
+    void GameOver_CityLockdown() {
+        gameOver = true;
+        // Trigger city lockdown event
+        std::cout << "Time's up! City lockdown initiated." << std::endl;
     }
 
     // Отрисовка в зависимости от состояния

@@ -1,0 +1,19 @@
+<Window x:Class="HovellasUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hovellas: The Glass Paradox" Height="800" Width="1200"
+        Background="Black">
+    <Grid>
+        <!-- 3D Viewport Overlay -->
+        <Border Background="#FF00FF00" Opacity="0.1">
+            <!-- Placeholder for 3D rendering -->
+        </Border>
+        <!-- UI Elements -->
+        <StackPanel VerticalAlignment="Bottom" Margin="10">
+            <TextBlock Text="Suspicion Levels" Foreground="Green" FontFamily="Courier New"/>
+            <ListBox x:Name="SuspicionList" Background="Transparent" Foreground="Green" BorderThickness="0"/>
+        </StackPanel>
+        <!-- Matrix Rain Effect -->
+        <Canvas x:Name="MatrixCanvas" Background="Transparent"/>
+    </Grid>
+</Window>

@@ -11,6 +11,7 @@ include_directories(include)
 
 # Source files
 file(GLOB SOURCES "src/*.cpp")
+file(GLOB HEADERS "include/*.h")
 
 # Create executable
 add_executable(hovellas_engine ${SOURCES})
