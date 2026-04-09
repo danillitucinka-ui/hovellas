@@ -1,0 +1,8 @@
+<Window x:Class="HovellasUI.EvidenceBoardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Стена Детектива" Height="600" Width="800">
+    <Canvas x:Name="BoardCanvas" Background="Black">
+        <!-- Здесь будут фотографии подозреваемых и улики -->
+    </Canvas>
+</Window>

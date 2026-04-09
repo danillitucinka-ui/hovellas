@@ -68,4 +68,11 @@ public class SuspectManager
     {
         // Логика обновления
     }
+
+    // Логировать решение игрока в базу данных
+    public void LogDecision(string suspectName, string decision, int trustChange)
+    {
+        // Простая логика: записать в файл или DB
+        System.IO.File.AppendAllText("decisions.log", $"{DateTime.Now}: {suspectName} - {decision} - Trust change: {trustChange}\n");
+    }
 }

@@ -13,6 +13,10 @@ include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
 file(GLOB HEADERS "include/*.h")
 
+# Add JSON library
+find_package(nlohmann_json REQUIRED)
+target_link_libraries(hovellas_engine nlohmann_json::nlohmann_json)
+
 # Create executable
 add_executable(hovellas_engine ${SOURCES})
 

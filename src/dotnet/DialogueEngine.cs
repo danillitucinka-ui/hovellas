@@ -35,12 +35,13 @@ public class DialogueEngine
     }
 
     // Обновить Trust на основе выбора игрока
-    public void UpdateTrust(string suspectName, int change)
+    public void UpdateTrust(string suspectName, int change, string decision = "Unknown")
     {
         Suspect suspect = suspectManager.GetSuspect(suspectName);
         if (suspect != null)
         {
             suspect.Trust = Math.Clamp(suspect.Trust + change, 0, 100);
+            suspectManager.LogDecision(suspectName, decision, change);
         }
     }
 
