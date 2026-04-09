@@ -1,0 +1,7 @@
+{
+  "characters": [
+    {"id": 1, "name": "Detective Alex", "role": "Protagonist", "description": "The main detective"},
+    {"id": 2, "name": "Suspect 1", "role": "Suspect", "description": "First suspect"},
+    // Add 11 more
+  ]
+}
